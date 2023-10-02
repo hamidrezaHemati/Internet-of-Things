@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <title>IOT - HW2</title>
+        <style>
+            #maindiv{
+                margin: 5%;
+                margin-left: 10%;
+                margin-top: 10%;
+                background-color: rgba(184, 234, 247, 0.2);
+                /* position: absolute; */
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                direction: ltr;
+                align-items: center;
+                justify-content: space-around;
+                height: 80%;
+
+                }
+            button {
+                height: 10%;
+                width: 30%;  
+                border: 2px solid rgb(17, 2, 156);
+                border-radius: 20%;
+                color: black;
+                background-color: rgba(0, 195, 255, 0.3);
+                font-size: larger;
+            }
+            
+            p {
+                text-align: center;
+                font-size: larger;
+            }
+        </style>
+        <script>
+            col = false
+            function changecol(){
+                var xhttp = new XMLHttpRequest();
+                if (col==false){
+                    // xhttp.onreadystatechange = function() {
+                    //     if (this.readyState == 4 && this.status == 200) {
+                    //         col = true;
+                    //         document.getElementById('ledbut').style.backgroundColor='rgb(0, 195, 255)';
+                    //         document.getElementById('ledbut').innerHTML = "LED Turned ON";
+                    //     }
+                    // };
+
+                    // xhttp.open("POST", "led_on", true);
+                    // xhttp.send();
+                    fetch("LED_ON").then (response => {
+                        col = true;
+                        document.getElementById('ledbut').style.backgroundColor='rgb(0, 195, 255)';
+                        document.getElementById('ledbut').innerHTML = "LED Turned ON";
+                    })
+                }
+                else{
+                    // xhttp.onreadystatechange = function() {
+                    //     if (this.readyState == 4 && this.status == 200) {
+                    //         col=false;
+                    //         document.getElementById('ledbut').style.backgroundColor='rgba(0, 195, 255, 0.3)';
+                    //         document.getElementById('ledbut').innerHTML = "LED Turned OFF";
+                    //     }
+                    // };
+
+                    // xhttp.open("POST", "led_on", true);
+                    // xhttp.send();
+                    fetch("LED_OFF").then (response => {
+                        col=false;
+                        document.getElementById('ledbut').style.backgroundColor='rgba(0, 195, 255, 0.3)';
+                        document.getElementById('ledbut').innerHTML = "LED Turned OFF";
+                    })
+                }
+            }
+            function ldr(){
+                // var xhttp = new XMLHttpRequest();
+                // xhttp.onreadystatechange = function() {
+                //     if (this.readyState == 4 && this.status == 200) {
+                //     document.getElementById("ldr").innerHTML = this.responseText;
+                //     }
+                // };
+                // xhttp.open("GET", "\ldrurl", true);
+                // xhttp.send();
+
+                fetch("LDRSensor").then (response => {
+                        document.getElementById('ldr').innerHTML = "kos";
+                })
+            }
+        </script>
+    </head>
+    <body>
+        
+        <div id="maindiv">
+            <button type="button" id="ldr" onclick="ldr()">
+                LDR Scanner
+            </button>
+            <button type="button" id="ledbut" 
+            onclick="changecol()"
+            >
+                LED Turned Off
+            </button>
+            
+            <p>Created by Aref Motamedi, Hamidreza Hemmati <br> 
+                Spring 2021</p>
+        </div>
+    </body>
+</html>

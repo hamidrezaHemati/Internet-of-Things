@@ -1,0 +1,233 @@
+{
+    "General-0-20210611-14:31:12-11464" : {
+        "attributes" : {
+            "configname" : "General",
+            "datetime" : "20210611-14:31:12",
+            "experiment" : "General",
+            "inifile" : "loRaNetworkTest.ini",
+            "iterationvars" : "$0=\"avg\"",
+            "iterationvarsf" : "avg-",
+            "measurement" : "$0=\"avg\"",
+            "network" : "LoRaNetworkTest",
+            "processid" : "11464",
+            "repetition" : "0",
+            "replication" : "#0",
+            "resultdir" : "results",
+            "runnumber" : "0",
+            "seedset" : "0"
+        },
+        "itervars" : {
+        },
+        "moduleparams" : [
+            { "**.numberOfGateways" : "1" },
+            { "**.loRaGW[0].numUdpApps" : "1" },
+            { "**.loRaGW[0].packetForwarder.localPort" : "2000" },
+            { "**.loRaGW[0].packetForwarder.destPort" : "1000" },
+            { "**.loRaGW[0].packetForwarder.destAddresses" : "\"networkServer\"" },
+            { "**.loRaGW[0].packetForwarder.indexNumber" : "0" },
+            { "**.loRaGW[1].numUdpApps" : "1" },
+            { "**.loRaGW[1].packetForwarder.localPort" : "2000" },
+            { "**.loRaGW[1].packetForwarder.destPort" : "1000" },
+            { "**.loRaGW[1].packetForwarder.destAddresses" : "\"networkServer\"" },
+            { "**.loRaGW[1].packetForwarder.indexNumber" : "1" },
+            { "**.networkServer.numUdpApps" : "1" },
+            { "**.networkServer.**.evaluateADRinServer" : "false" },
+            { "**.networkServer.udpApp[0].typename" : "\"NetworkServerApp\"" },
+            { "**.networkServer.udpApp[0].destAddresses" : "\"loRaGW[0]\"" },
+            { "**.networkServer.udpApp[0].destPort" : "2000" },
+            { "**.networkServer.udpApp[0].localPort" : "1000" },
+            { "**.networkServer.udpApp[0].adrMethod" : "\"avg\"" },
+            { "**.numberOfNodes" : "15" },
+            { "**.numberOfPacketsToSend" : "0" },
+            { "**.timeToFirstPacket" : "exponential(100s)" },
+            { "**.timeToNextPacket" : "exponential(100s)" },
+            { "**.alohaChannelModel" : "false" },
+            { "**.loRaNodes[*].**.initFromDisplayString" : "false" },
+            { "**.loRaNodes[*].**.evaluateADRinNode" : "false" },
+            { "**.loRaNodes[*].**initialLoRaSF" : "7" },
+            { "**.loRaNodes[*].**initialLoRaBW" : "125 kHz" },
+            { "**.loRaNodes[*].**initialLoRaCR" : "4" },
+            { "**.loRaNodes[*].**initialLoRaTP" : "14dBm" },
+            { "**.loRaNodes[*].**.initialX" : "uniform(0m, 480m)" },
+            { "**.loRaNodes[*].**.initialY" : "uniform(0m, 480m)" },
+            { "**.LoRaGWNic.radio.iAmGateway" : "true" },
+            { "**.loRaGW[*].**.initFromDisplayString" : "false" },
+            { "**.loRaGW[0].**.initialX" : "240m" },
+            { "**.loRaGW[0].**.initialY" : "240m" },
+            { "**.loRaNodes[*].LoRaNic.radio.energyConsumerType" : "\"LoRaEnergyConsumer\"" },
+            { "**.loRaNodes[*].**.energySourceModule" : "\"IdealEpEnergyStorage\"" },
+            { "**.loRaNodes[*].LoRaNic.radio.energyConsumer.configFile" : "xmldoc(\"energyConsumptionParameters.xml\")" },
+            { "**.sigma" : "0" },
+            { "**.constraintAreaMinX" : "0m" },
+            { "**.constraintAreaMinY" : "0m" },
+            { "**.constraintAreaMinZ" : "0m" },
+            { "**.constraintAreaMaxX" : "480m" },
+            { "**.constraintAreaMaxY" : "480m" },
+            { "**.constraintAreaMaxZ" : "0m" },
+            { "LoRaNetworkTest.**.radio.separateTransmissionParts" : "false" },
+            { "LoRaNetworkTest.**.radio.separateReceptionParts" : "false" },
+            { "**.delayer.config" : "xmldoc(\"cloudDelays.xml\")" },
+            { "**.radio.radioMediumModule" : "\"LoRaMedium\"" },
+            { "**.LoRaMedium.pathLossType" : "\"LoRaLogNormalShadowing\"" },
+            { "**.minInterferenceTime" : "0s" },
+            { "**.displayAddresses" : "false" }
+        ],
+        "scalars" : [
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[0].LoRaNic.radio.energyConsumer",
+                "name" : "totalEnergyConsumed",
+                "value" : 431.57142382799
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[0].SimpleLoRaApp",
+                "name" : "sentPackets",
+                "value" : 4916
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[1].LoRaNic.radio.energyConsumer",
+                "name" : "totalEnergyConsumed",
+                "value" : 417.1780979577
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[1].SimpleLoRaApp",
+                "name" : "sentPackets",
+                "value" : 4682
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[2].LoRaNic.radio.energyConsumer",
+                "name" : "totalEnergyConsumed",
+                "value" : 421.61448787426
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[2].SimpleLoRaApp",
+                "name" : "sentPackets",
+                "value" : 4764
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[3].LoRaNic.radio.energyConsumer",
+                "name" : "totalEnergyConsumed",
+                "value" : 426.5545658408
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[3].SimpleLoRaApp",
+                "name" : "sentPackets",
+                "value" : 4874
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[4].LoRaNic.radio.energyConsumer",
+                "name" : "totalEnergyConsumed",
+                "value" : 425.53736050813
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[4].SimpleLoRaApp",
+                "name" : "sentPackets",
+                "value" : 4831
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[5].LoRaNic.radio.energyConsumer",
+                "name" : "totalEnergyConsumed",
+                "value" : 422.98375980849
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[5].SimpleLoRaApp",
+                "name" : "sentPackets",
+                "value" : 4775
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[6].LoRaNic.radio.energyConsumer",
+                "name" : "totalEnergyConsumed",
+                "value" : 422.15809735626
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[6].SimpleLoRaApp",
+                "name" : "sentPackets",
+                "value" : 4803
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[7].LoRaNic.radio.energyConsumer",
+                "name" : "totalEnergyConsumed",
+                "value" : 425.35881016001
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[7].SimpleLoRaApp",
+                "name" : "sentPackets",
+                "value" : 4813
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[8].LoRaNic.radio.energyConsumer",
+                "name" : "totalEnergyConsumed",
+                "value" : 420.9988658768
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[8].SimpleLoRaApp",
+                "name" : "sentPackets",
+                "value" : 4797
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[9].LoRaNic.radio.energyConsumer",
+                "name" : "totalEnergyConsumed",
+                "value" : 428.4557220666
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[9].SimpleLoRaApp",
+                "name" : "sentPackets",
+                "value" : 4882
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[10].LoRaNic.radio.energyConsumer",
+                "name" : "totalEnergyConsumed",
+                "value" : 417.01458312276
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[10].SimpleLoRaApp",
+                "name" : "sentPackets",
+                "value" : 4769
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[11].LoRaNic.radio.energyConsumer",
+                "name" : "totalEnergyConsumed",
+                "value" : 415.22340502016
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[11].SimpleLoRaApp",
+                "name" : "sentPackets",
+                "value" : 4727
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[12].LoRaNic.radio.energyConsumer",
+                "name" : "totalEnergyConsumed",
+                "value" : 430.12653221066
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[12].SimpleLoRaApp",
+                "name" : "sentPackets",
+                "value" : 4899
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[13].LoRaNic.radio.energyConsumer",
+                "name" : "totalEnergyConsumed",
+                "value" : 418.153108267
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[13].SimpleLoRaApp",
+                "name" : "sentPackets",
+                "value" : 4744
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[14].LoRaNic.radio.energyConsumer",
+                "name" : "totalEnergyConsumed",
+                "value" : 420.23398490846
+            },
+            {
+                "module" : "LoRaNetworkTest.loRaNodes[14].SimpleLoRaApp",
+                "name" : "sentPackets",
+                "value" : 4814
+            },
+            {
+                "module" : "LoRaNetworkTest.networkServer.udpApp[0]",
+                "name" : "totalReceivedPackets",
+                "value" : 24053
+            }
+        ]
+    }
+}
